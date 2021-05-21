@@ -1,0 +1,8 @@
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  padding: 20px 0;
+}

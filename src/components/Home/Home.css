@@ -1,0 +1,87 @@
+.home__startingImg {
+  background-image: url(../../images/wolverineClaws.png) !important;
+}
+
+.home__leftImg {
+  background-image: url(../../images/wolverine.png),
+    url(../../images/leftClaw.png) !important;
+}
+
+.home__rightImg {
+  background-image: url(../../images/wolverine.png),
+    url(../../images/rightClaw.png) !important;
+}
+
+main {
+  flex: 1;
+}
+
+.home__btns {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding: 12px 25px;
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: normal;
+  font-size: 19px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 150px;
+}
+
+.home__btns:hover {
+  border: 2px solid #ffffff;
+  color: #eb1d27;
+  background-color: #ffffff;
+}
+
+.home {
+  background-color: #eb1d27;
+  background-image: url(../../images/wolverine.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  justify-content: space-between;
+  height: 750px;
+}
+
+.home__leftBox {
+  display: flex;
+  flex: 0 1 35%;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.home__rightBox {
+  display: flex;
+  flex: 0 1 35%;
+  align-items: flex-start;
+}
+
+@media all and (max-width: 850px) {
+  .home {
+    background-image: none;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+  }
+
+  .home__leftBox {
+    display: flex;
+    flex: 0 1 40%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home__rightBox {
+    display: flex;
+    flex: 0 1 40%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home__btns {
+    margin-top: 0;
+    flex-basis: 300px;
+  }
+}
