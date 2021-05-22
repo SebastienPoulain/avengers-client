@@ -1,6 +1,4 @@
 .login {
-  background-image: url(../../images/bg.png);
-  background-repeat: repeat;
   -webkit-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
   -moz-box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);
   box-shadow: inset 0px 143px 108px -18px rgba(0, 0, 0, 0.39);

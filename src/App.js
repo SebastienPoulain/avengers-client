@@ -7,9 +7,9 @@ import Signup from "./components/Signup/Signup";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import "./App.css";
-import Avengers from "./components/Avengers/Avengers";
+import Cards from "./components/Cards/Cards";
 import Menu from "./components/Menu/Menu";
-import Nav from "./components/Nav/Nav";
+import Details from "./components/Details/Details";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -64,18 +64,22 @@ function App() {
           </Route>
 
           {isLoggedIn ? (
-            <Route exact to="/avengers">
-              <Menu
-                user={user}
-                handleLogout={handleLogout}
-                loggedInStatus={isLoggedIn}
-              />
-              <Nav />
-              <Avengers />
+            <Route exact path="/avengers">
+              <Menu user={user} handleLogout={handleLogout} />
+              <Cards />
             </Route>
           ) : (
             <Redirect to="/" from="/avengers" />
           )}
+          {isLoggedIn ? (
+            <Route path="/avengers/:id">
+              <Menu user={user} handleLogout={handleLogout} />
+              <Details />
+            </Route>
+          ) : (
+            <Redirect to="/" from="/avengers/:id" />
+          )}
+          <Redirect to="/" />
         </Switch>
       </BrowserRouter>
     </div>
