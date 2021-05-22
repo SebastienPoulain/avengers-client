@@ -1,0 +1,63 @@
+.menu {
+  color: white;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__icons {
+  display: flex;
+  flex: 0.95;
+  align-items: center;
+  text-align: center;
+}
+
+.menu__icon--active > a > p,
+.menu__info {
+  display: inline !important;
+}
+
+.menu__icon:hover > a > p,
+.menu__info {
+  display: inline;
+}
+
+.menu__icon > a > p,
+.menu__info {
+  display: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: small;
+}
+
+.menu__icon > a > .MuiSvgIcon-root,
+.menu__info > .MuiSvgIcon-root {
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu__icon > a,
+.menu__info {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.menu__infoIcon {
+  display: none;
+}
+
+.MuiSvgIcon-root {
+  font-size: 30px !important;
+  cursor: pointer;
+}
+
+.menu > p {
+  justify-content: end !important;
+}

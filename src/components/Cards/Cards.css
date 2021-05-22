@@ -1,0 +1,19 @@
+.cards > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cards > h1 {
+  cursor: default;
+  margin-bottom: 20px;
+}
+
+.cards__loader {
+  margin: auto;
+}
