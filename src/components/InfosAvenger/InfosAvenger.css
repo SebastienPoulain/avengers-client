@@ -1,0 +1,41 @@
+.infosAvenger {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.infosAvenger > h1 {
+  cursor: default;
+}
+.infosAvenger > img {
+  object-fit: contain;
+  width: 500px;
+  height: 550px;
+}
+
+.infosAvenger > p {
+  color: white;
+  text-align: center;
+  width: 40%;
+}
+
+.infosAvenger__btn {
+  background-color: #d31017;
+  padding: 10px 15px;
+  transform: skew(-15deg);
+}
+.infosAvenger__btn > a {
+  color: #ffffff !important;
+}
+
+.infosAvenger__btn:hover {
+  filter: brightness(200%);
+}
+
+@media screen and (max-width: 525px) {
+  .infosAvenger > img {
+    object-fit: contain;
+    width: 80%;
+    height: 40%;
+  }
+}

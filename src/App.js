@@ -9,7 +9,7 @@ import Header from "./components/Header/Header";
 import "./App.css";
 import Cards from "./components/Cards/Cards";
 import Menu from "./components/Menu/Menu";
-import Details from "./components/Details/Details";
+import Avenger from "./components/Avenger/Avenger";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -64,6 +64,15 @@ function App() {
           </Route>
 
           {isLoggedIn ? (
+            <Route exact path="/avengers/:id">
+              <Menu user={user} handleLogout={handleLogout} />
+              <Avenger />
+            </Route>
+          ) : (
+            <Redirect to="/" from="/avengers/:id" />
+          )}
+
+          {isLoggedIn ? (
             <Route exact path="/avengers">
               <Menu user={user} handleLogout={handleLogout} />
               <Cards />
@@ -71,14 +80,7 @@ function App() {
           ) : (
             <Redirect to="/" from="/avengers" />
           )}
-          {isLoggedIn ? (
-            <Route path="/avengers/:id">
-              <Menu user={user} handleLogout={handleLogout} />
-              <Details />
-            </Route>
-          ) : (
-            <Redirect to="/" from="/avengers/:id" />
-          )}
+
           <Redirect to="/" />
         </Switch>
       </BrowserRouter>

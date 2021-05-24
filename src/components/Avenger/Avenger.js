@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "./Cards.css";
-import { Link } from "react-router-dom";
-import Card from "../Card/Card";
+import "./Avenger.css";
 import axios from "axios";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { useParams } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import InfosAvenger from "../InfosAvenger/InfosAvenger";
 
-const Cards = () => {
-  const [avengers, setAvengers] = useState([]);
+const Avenger = () => {
+  let { id } = useParams();
   const [footer, setFooter] = useState("");
+  const [avenger, setAvenger] = useState([]);
   const [loading, setLoading] = useState(true);
   const API_KEY = process.env.REACT_APP_API_PUBLIC_KEY.replace(";", "")
     .replace('"', "")
@@ -20,34 +21,27 @@ const Cards = () => {
   useEffect(() => {
     axios
       .get(
-        `https://gateway.marvel.com/v1/public/series/9085/characters?ts=1&apikey=${API_KEY}&hash=${HASH}&limit=100`
+        `https://gateway.marvel.com/v1/public/characters/${id}?ts=1&apikey=${API_KEY}&hash=${HASH}`
       )
       .then((response) => {
         console.log(response);
         setFooter(response.data.attributionText);
-        setAvengers(response.data.data.results);
+        setAvenger(response.data.data.results[0]);
         setLoading(false);
       })
       .catch((err) => console.log(err));
   }, []);
 
   return (
-    <div className="cards">
-      <h1>Catalogue des avengers</h1>
+    <div className="avenger">
       {loading ? (
-        <CircularProgress className="cards__loader" />
+        <CircularProgress className="avenger__loader" />
       ) : (
-        <div>
-          {avengers.map((avenger) => (
-            <Link key={avenger.id} to={`/avengers/${avenger.id}`}>
-              <Card avenger={avenger} />
-            </Link>
-          ))}
-        </div>
+        <InfosAvenger infos={avenger} />
       )}
       <Footer footer={footer} />
     </div>
   );
 };
 
-export default Cards;
+export default Avenger;

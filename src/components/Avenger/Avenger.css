@@ -1,0 +1,7 @@
+.avenger__loader {
+  margin: auto;
+}
+
+.avenger > .MuiCircularProgress-root {
+  display: block;
+}
