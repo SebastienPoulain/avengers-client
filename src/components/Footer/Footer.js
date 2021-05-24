@@ -1,12 +1,17 @@
 import React from "react";
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = ({ footer }) => {
   return (
     <footer>
       <div className="footer">
-        <p>Projet réalisé par Sébastien Poulain - 2021</p>
-        <p>Projet de démo pour Rum&amp;Code</p>
+        {footer ? (
+          <a target="_blank" href="http://marvel.com">
+            {footer}
+          </a>
+        ) : (
+          <p>Projet réalisé par Sébastien Poulain - 2021</p>
+        )}
       </div>
     </footer>
   );

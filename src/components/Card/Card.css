@@ -34,7 +34,8 @@
 }
 
 .card__back {
-  background-color: dodgerblue;
+  background-color: #d31017;
   color: white;
   transform: rotateY(180deg);
+  font-size: medium;
 }
